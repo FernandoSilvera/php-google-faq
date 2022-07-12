@@ -75,9 +75,42 @@ $db = [
       "tag" => "h2",
       "content" => "Are my search queries sent to websites when I click on Google Search results?",
     ],
-    "paragraph" => [
+    "paragraphs" => [
       "In some cases, yes. When you click on a search result in Google Search, your web browser also may send the Internet address, or URL, of the search results page to the destination webpage as the Referrer URL. The URL of the search results page may sometimes contain the search query you entered. If you are using SSL Search (Google's encrypted search functionality), under most circumstances, your search terms will not be sent as part of the URL in the Referrer URL. There are some exceptions to this behavior, such as if you are using some less popular browsers. More information on SSL Search can be found here. Search queries or information contained in the Referrer URL may be available via Google Analytics or an application programming interface (API). In addition, advertisers may receive information relating to the exact keywords that triggered an ad click."
     ],
   ],
 ];
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">  
+  <title>PHP Google faq</title>
+</head>
+
+<body>
+  <div class="container">
+    <?php
+    foreach ($db as $faq) {
+    ?>
+
+      <!-- Create a section for every faq with title and paragraphs -->
+      <section class="my-5">
+        <?php
+          echo "<" . $faq['title']['tag'] . ">" . $faq['title']['content'] . "</" . $faq['title']['tag'] . ">";
+          foreach ($faq['paragraphs'] as $paragraphs) {
+          echo "<p>". $paragraphs ."</p>";
+          }
+        ?>
+      </section>
+        
+    <?php } ?>
+  </div>
+</body>
+</html>
