@@ -105,7 +105,7 @@ $db = [
         <?php
           echo "<" . $faq['title']['tag'] . ">" . $faq['title']['content'] . "</" . $faq['title']['tag'] . ">";
           foreach ($faq['paragraphs'] as $paragraphs) {
-          echo "<p>". $paragraphs ."</p>";
+            echo "<p>". $paragraphs ."</p>";
           }
         ?>
       </section>
